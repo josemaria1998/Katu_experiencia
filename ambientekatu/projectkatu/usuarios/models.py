@@ -35,4 +35,4 @@ class Compra(models.Model):
 
 
     def __str__(self):
-        return self.forma_pagamento + "-" + self.data
+        return self.data.strftime("%Y/%m/%d") +" - " + self.forma_pagamento
