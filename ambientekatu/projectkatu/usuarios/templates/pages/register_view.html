@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="css-forms">
+    <div>
+        <h1>Cadastro de Usuario</h1>
+    </div>
+    <div class="">
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <label for="{{field.id_for_label}}"> {{field.label}}</label>
+            {{field}} <br>
+            {% endfor %}
+<br>
+            <button type="submit">salvar</button>
+        </form>
+    </div>
+</div>
+<!-- {{ form }} -->
+
+{% endblock %}
