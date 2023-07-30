@@ -9,7 +9,7 @@
         <h1>Cadastro de Usuario</h1>
     </div>
     <div class="">
-        <form action="" method="POST">
+        <form action="{% url 'usuarios:create' %}" method="POST">
             {% csrf_token %}
             
             {% for field in form %}
@@ -17,7 +17,7 @@
             {{field}} <br>
             {% endfor %}
 <br>
-            <button type="submit">salvar</button>
+            <button type="submit">Salvar</button>
         </form>
     </div>
 </div>
