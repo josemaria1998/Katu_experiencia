@@ -8,13 +8,22 @@
     <div>
         <h1>Cadastro de Usuario</h1>
     </div>
-    <div class="">
+    <div class="div_forms">
         <form action="{% url 'usuarios:create' %}" method="POST">
             {% csrf_token %}
             
             {% for field in form %}
             <label for="{{field.id_for_label}}"> {{field.label}}</label>
             {{field}} <br>
+            {% if field.help_text %}
+                <div class="div_helptext">
+                    {{ field.help_text }}
+               </div>
+            {%endif%}
+            <br>
+            {% if field.errors %}
+                {{ field.errors }}
+            {% endif %}
             {% endfor %}
 <br>
             <button type="submit">Salvar</button>
