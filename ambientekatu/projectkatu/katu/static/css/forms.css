@@ -1,22 +1,12 @@
-.container {
-    color: white;
-    text-align: center;
-    max-width: 300px;
-    border: 2px solid black;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 100px auto; 
-  }
-  
+
   .css-forms{
-    padding-top: 30px;
-    height:430px;
+    padding-top: 25px;
+    height:530px;
     background-color: white;
     width: 510px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 25px;
     border-radius: 2%;
   }
 
@@ -30,7 +20,7 @@ text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 400px;
-  height: 360px;
+  height: 290px;
   text-transform: uppercase;
   font-size: 13px;
   text-align: justify;
@@ -42,7 +32,14 @@ text-align: center;
   float: left;
 } 
 
-
+button{
+  width: 65px;
+  height: 25px;
+  margin-top: -8px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+}
 
 
 /* div pra funções do django */
@@ -62,7 +59,13 @@ text-align: center;
 
 
 .div_text{
-  color: red;
+  margin-top: 8px;
+  border-radius: 5px;
+
+  width: 250px;
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -70,4 +73,59 @@ text-align: center;
 .column{
   color: white;
   margin-left: 1%;
+  display: block;
+}
+
+
+
+
+
+
+
+.div_login{
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 90px;
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: justify;
+}
+
+
+.css-login{
+  text-align: center;
+  padding-top: 25px;
+  height:350px;
+  background-color: white;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 2%;
+}
+
+.css-login h1{
+  text-align: center;
+  padding-top: 5%;
+}
+
+.css-login form {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.div_cadastro a{
+
+  width: 400px;
+  height: 30px;
+  font-size: 13px;
+}
+
+.div_cadastro {
+  margin-top: 100px;
+  width: 300px;
+  height: 25px;
+  font-size: 13px;
 }
