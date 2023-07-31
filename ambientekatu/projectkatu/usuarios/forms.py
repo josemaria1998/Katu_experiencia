@@ -69,3 +69,12 @@ class RegisterForm (forms.ModelForm):
             'placeholder' : 'senha',  
         })                     
     )
+
+class AcessForm(forms.Form):
+    username = forms.CharField(
+        label ='Digite seu username'
+    )
+    password = forms.CharField(
+        label= 'Digite sua Senha',
+        widget = forms.PasswordInput()
+    )
