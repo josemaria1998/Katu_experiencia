@@ -6,16 +6,15 @@ class RegisterForm (forms.ModelForm):
     class Meta:
         model = User
         # fields = '__all__'
-        fields = ['first_name', 'last_name', 'username', 'email','password']
-        labels = {'first_name' : 'Digite seu primeeiro nome',
-                    'last_name' : 'Digite seu ultimo nome',
+        fields = ['first_name', 'username', 'email','password']
+        labels = {'first_name' : 'Digite seu nome completo ',
                     'username' : 'Digite seu username',
                     'email' : 'Digite o seu email',
                     'password' : 'Digite sua senha '
                     }
         help_texts = {
-            'email' : 'O email deve ter um /@',
-            'password' : 'cria uma senha forte com caracteres, numeros e simbolos especias',
+            'email' : 'O email deve ter um @',
+            'password' : 'crie uma senha forte com caracteres, numeros e simbolos especias',
         }
         error_mensages = {
             'username' : {
@@ -25,7 +24,7 @@ class RegisterForm (forms.ModelForm):
         
         widgets = {
             'first_name' : forms.TextInput(attrs ={ 
-                'placeholder' : 'Primeiro Nome',
+                'placeholder' : 'Nome Completo',
                 'required' : 'true'
         }),
             'password' : forms.PasswordInput(attrs ={
