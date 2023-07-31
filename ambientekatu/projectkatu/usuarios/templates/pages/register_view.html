@@ -7,6 +7,23 @@
 <div class="css-forms">
     <div>
         <h1>Cadastro de Usuario</h1>
+
+        <p>
+            {% if form.error %}
+                <div class= "div_error">
+                     o formulario apresenta erros. corrija-los
+                </div>  
+            {% endif %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class= "div_sucess">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </p>
+
     </div>
     <div class="div_forms">
         <form action="{% url 'usuarios:create' %}" method="POST">
@@ -22,7 +39,9 @@
             {%endif%}
             <br>
             {% if field.errors %}
-                {{ field.errors }}
+                <div class="div_error">
+                    {{ field.errors }}
+                </div>
             {% endif %}
             {% endfor %}
 <br>
