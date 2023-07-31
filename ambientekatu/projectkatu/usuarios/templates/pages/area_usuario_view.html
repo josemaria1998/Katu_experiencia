@@ -7,6 +7,27 @@
     <div class="div_titulo-form">
         <h1> Area do Usuario </h1>
 
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class= "div_sucess">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="menu-area-usuario">
+            <div>
+                Voce esta logado como {{ 'request.user.username '}}
+            </div>
+            <div>
+                <form action="{% url 'usuarios:acess' %}" method="post"> 
+                    {% csrf_token %}
+
+                    <button type="submit">logout</button>
+                </form> 
+        </div>
+        </div>
     </div>
 </div>
 

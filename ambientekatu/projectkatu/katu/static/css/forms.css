@@ -37,3 +37,9 @@
   color: green;
   font-weight: bold;
 }
+
+.menu-area-usuario{
+  width: 26%;
+  background-color: #84a648;
+  float: left;
+}

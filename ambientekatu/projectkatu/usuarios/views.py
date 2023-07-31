@@ -6,7 +6,8 @@ from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -86,7 +87,16 @@ def login_acess(request):
    
     return redirect('usuarios:login')
 
-
+@login_required(login_url ='usuarios : login', redirect_field_name = 'next')
 def area_usuario_view(request):
 
     return render(request, 'pages/area_usuario_view.html')
+
+@login_required(login_url ='usuarios : login', redirect_field_name = 'next')
+def logout_view(request):
+    if not request.POST:
+        redirect('usuarios:login')
+
+    logout(request)
+
+    return redirect('usuarios:login')
