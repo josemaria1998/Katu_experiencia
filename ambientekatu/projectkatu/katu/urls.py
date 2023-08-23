@@ -1,8 +1,9 @@
 from django.urls import path
-from katu.views import home
+from katu.views import *
 
 urlpatterns = [
-    path('', home ),
-    #path('sobre/', sobre),
-    #path('contatos/', contatos),
+    path('', home, name='home'),
+    path('noticia/', noticia, name='noticia'),
+    path('pacotes/', pacotes, name= 'pacotes'),
+    path('contato/', contato, name= 'contato'),
 ]

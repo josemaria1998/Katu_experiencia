@@ -26,15 +26,16 @@
         <div class="left-part">
             <img src="{% static 'media/logo_KATU_EXPERIÊNCIA.png' %}" alt="">
             <div class="logo" style="color: aliceblue;">
-                <h1><span>Catu</span> Experiência</h1>
+                
+                <a href=" {% url 'home' %}"><h1><span>Catu</span> Experiência</h1> </a>
             </div>
         </div>
         <div class="right-part">
             <div class="navbar">
                 <ul> 
-                    <li><a href=" ">Pacotes De Turismo</a></li>
-                    <li><a href="comidas-fotos-localidade.html">Feed De Notícias</a></li>
-                    <li><a href="feed-de-noticias-empresa.html">Sobre</a></li>
+                    <li><a href="{% url 'pacotes' %}">Pacotes De Turismo</a></li>
+                    <li><a href="{% url 'noticia' %}">Feed De Notícias</a></li>
+                    <li><a href="{% url 'contato' %}">Sobre</a></li>
                     <li><a href=" {% url 'usuarios:login' %}">Login E Cadastro</a></li>
                 </ul>
                 <div class="btn-group">

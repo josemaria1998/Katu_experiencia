@@ -5,3 +5,12 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'home.html')
+
+def pacotes(request):
+    return render(request, 'pacotes.html')
+
+def noticia(request):
+    return render(request, 'noticia.html')
+
+def contato(request):
+    return render(request, 'contato.html')
