@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="css-forms">
+    <div>
+        <h1>Cadastro de Usuario</h1>
+
+        <p>
+            {% if form.error %}
+                <div class= "div_error">
+                     o formulario apresenta erros. corrija-los
+                </div>  
+            {% endif %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class= "div_sucess">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </p>
+
+    </div>
+    <div class="div_forms">
+        <form action="{% url 'usuarios:create' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for="{{field.id_for_label}}"> {{field.label}}</label>
+            <br>
+            {{field}} <br>
+            {% if field.help_text %}
+                <div class="div_helptext">
+                    {{ field.help_text }}
+               </div>
+            {%endif%}
+            <br>
+            {% if field.errors %}
+                <div class="div_error">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+            {% endfor %}
+
+            <button type="submit">Salvar</button>
+        </form>  
+        <div class="div_text">
+            <p>Ja tem uma conta?
+           <a href=" /usuarios/login" style="color: red">fazer login</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
